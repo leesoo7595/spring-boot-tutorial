@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2f30822-a35d-45c7-ae25-6beed34391e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/isooproject/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/isooproject/Example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/isooproject/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/isooproject/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/isooproject/ExampleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/isooproject/ExampleTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -61,7 +58,7 @@
       <usages-collector id="statistics.spring.boot.mvc.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="427" />
+          <entry key="JAVA" value="434" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="98" />
           <entry key="XML" value="250" />
@@ -70,7 +67,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="java" value="427" />
+          <entry key="java" value="434" />
           <entry key="properties" value="98" />
           <entry key="xml" value="250" />
         </counts>
@@ -78,6 +75,7 @@
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -88,6 +86,7 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="class" value="1" />
           <entry key="gitignore" value="2" />
           <entry key="iml" value="1" />
           <entry key="java" value="3" />
@@ -109,7 +108,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/isooproject/Example.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -141,11 +140,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/org/isooproject/ExampleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+            <state relative-caret-position="240">
+              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -328,7 +327,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538931622679" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538973196480" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -397,14 +396,11 @@
       <option name="presentableId" value="Default" />
       <updated>1538498621131</updated>
       <workItem from="1538498623085" duration="2370000" />
-      <workItem from="1538562009990" duration="10082000" />
+      <workItem from="1538562009990" duration="10629000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ExampleTest - 2018.10.08 at 00h 38m 00s.xml">
-      <configuration name="ExampleTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ExampleTest - 2018.10.08 at 00h 38m 49s.xml">
       <configuration name="ExampleTest" configurationId="JUnit" />
     </history-entry>
@@ -432,15 +428,18 @@
     <history-entry file="ExampleTest - 2018.10.08 at 01h 48m 31s.xml">
       <configuration name="ExampleTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ExampleTest - 2018.10.08 at 13h 29m 00s.xml">
+      <configuration name="ExampleTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12452000" />
+    <option name="totallyTimeSpent" value="12999000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25274727" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -451,7 +450,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3877551" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3877551" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -520,16 +519,6 @@
     <entry file="file://$PROJECT_DIR$/springboot.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/isooproject/ExampleTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/isooproject/user/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -552,6 +541,23 @@
             <element signature="imports" expanded="true" />
             <element signature="e#461#462#0" expanded="true" />
             <element signature="e#519#520#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.4.RELEASE/spring-test-5.0.4.RELEASE.jar!/org/springframework/test/context/ContextConfiguration.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/isooproject/ExampleTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

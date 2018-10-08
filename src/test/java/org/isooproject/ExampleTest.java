@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Example.class)
+@ContextConfiguration(classes = Example.class)
 public class ExampleTest {
 
     // @Autowired로 의존성 주입을 받을 수 있는지 없는지 테스트
