@@ -11,8 +11,8 @@ public class HelloService {
         return "Hello, Spring boot!";
     }
 
-    @PostConstruct
-    public void init() {
-        throw new RuntimeException("Intended Exception!");
-    }
+//    @PostConstruct
+//    public void init() {
+//        throw new RuntimeException("Intended Exception!");
+//    }
 }
