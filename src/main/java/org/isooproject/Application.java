@@ -20,11 +20,6 @@ public class Application {
     @Autowired
     HelloService helloService;
 
-    @Bean
-    public ExitCodeGenerator exitCodeGenerator() {
-        return () -> 42;
-    }
-
     @RequestMapping("/")
     String home() {
         return helloService.getMessage();
@@ -33,9 +28,7 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication application = new SpringApplication(Application.class);
         application.addListeners(new MyListener());
-        ConfigurableApplicationContext run = application.run(args);
-
-        System.exit(SpringApplication.exit(run));
+        application.run(args);
 
     }
 }
