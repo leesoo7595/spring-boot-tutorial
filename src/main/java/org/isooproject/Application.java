@@ -12,7 +12,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+/**
+ * --SPRING_APPLICATION_JSON={"foo":"bar"}
+ */
 @RestController
 @SpringBootApplication
 public class Application {
