@@ -1,6 +1,7 @@
 package org.isooproject;
 
 import org.isooproject.hello.HelloService;
+import org.isooproject.hello.IsooprojectProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.ExitCodeGenerator;
@@ -19,11 +20,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @SpringBootApplication
+@EnableConfigurationProperties(IsooprojectProperties.class)
 public class Application {
 
     @Autowired
     HelloService helloService;
 
+    // Bean으로 등록되어있으면 바로 environment로 들어감
+    // @EnableConfigurationProperties(IsooprojectProperties.class) 없어도 들어간닷
+    // 위에 Bean 등록 안되어있을때 쓰면
     @Autowired
     Environment environment;
 
