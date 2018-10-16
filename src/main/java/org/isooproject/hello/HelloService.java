@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class HelloService {
 
     // properties value를 가져다 쓰는 방
-    @Value("${name}")
+    @Value("${isooproject.name}")
     String name;
 
     public String getMessage() {
