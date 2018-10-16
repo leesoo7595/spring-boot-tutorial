@@ -6,13 +6,28 @@ spring:
   profiles: default
 isooproject:
   name: Leesoo Default
+  pojoList:
+  - name: my name
+    description: my description
+  - name: another name
+    description: another description
 ---
 spring:
   profiles: prod
 isooproject:
   name: Leesoo Prod
+  pojoList:
+  - name: my name
+    description: my description
+  - name: another name
+    description: another description
+  - name: another name
+    description: another description
 ---
 spring:
   profiles: dev
 isooproject:
   name: Leesoo Dev
+  pojoList:
+  - name: my name
+    description: my description
