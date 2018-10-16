@@ -17,12 +17,7 @@ public class HelloService {
     @Autowired
     IsooprojectProperties isooprojectProperties;
 
-    @Autowired
-    Environment environment;
-
     public String getMessage() {
-        System.out.println(environment.getProperty("isooproject.list"));
-        System.out.println(environment.getProperty("isooproject.name"));
 
         return "hello, " + isooprojectProperties.getName() + " "
                 + isooprojectProperties.getPojoList().size();
