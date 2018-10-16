@@ -20,6 +20,9 @@ public class HelloService {
     public String getMessage() {
 
         return "hello, " + isooprojectProperties.getName() + " "
-                + isooprojectProperties.getPojoList().size();
+                + isooprojectProperties.getPojoList().size() + " "
+                + isooprojectProperties.getWorkFor() + " "
+                + isooprojectProperties.getWhereToGo() + " "
+                + isooprojectProperties.getFooBar();
     }
 }

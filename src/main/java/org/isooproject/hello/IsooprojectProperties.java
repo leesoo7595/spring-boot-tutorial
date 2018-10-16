@@ -12,6 +12,12 @@ public class IsooprojectProperties {
 
     private List<MyPojo> pojoList;
 
+    private String workFor;
+
+    private String whereToGo;
+
+    private String fooBar;
+
     public String getName() {
         return name;
     }
@@ -26,5 +32,29 @@ public class IsooprojectProperties {
 
     public void setPojoList(List<MyPojo> pojoList) {
         this.pojoList = pojoList;
+    }
+
+    public String getWorkFor() {
+        return workFor;
+    }
+
+    public void setWorkFor(String workFor) {
+        this.workFor = workFor;
+    }
+
+    public String getWhereToGo() {
+        return whereToGo;
+    }
+
+    public void setWhereToGo(String whereToGo) {
+        this.whereToGo = whereToGo;
+    }
+
+    public String getFooBar() {
+        return fooBar;
+    }
+
+    public void setFooBar(String fooBar) {
+        this.fooBar = fooBar;
     }
 }

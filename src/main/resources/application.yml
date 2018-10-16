@@ -11,6 +11,9 @@ isooproject:
     description: my description
   - name: another name
     description: another description
+  work-for: Microsoft
+  whereToGo: Seattle
+  foo_bar: baz
 ---
 spring:
   profiles: prod
@@ -23,6 +26,9 @@ isooproject:
     description: another description
   - name: another name
     description: another description
+  work-for: Microsoft
+  whereToGo: Seattle
+  foo_bar: baz
 ---
 spring:
   profiles: dev
@@ -31,3 +37,6 @@ isooproject:
   pojoList:
   - name: my name
     description: my description
+  work-for: Microsoft
+  whereToGo: Seattle
+  foo_bar: baz

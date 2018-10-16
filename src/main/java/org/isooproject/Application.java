@@ -35,6 +35,7 @@ public class Application {
     String home() {
         System.out.println(environment.getProperty("isooproject.pojoList[0].name"));
         System.out.println(environment.getProperty("isooproject.name"));
+        System.out.println(environment.getProperty("isooproject.work-for"));
         return helloService.getMessage();
     }
 
