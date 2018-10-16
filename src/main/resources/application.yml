@@ -1,6 +1,7 @@
 isooproject:
   name: Leesoo YAML
 ---
+#아무 설정도 안했기 때문에 디폴트로 뜬다.
 spring:
   profiles: default
 isooproject:
