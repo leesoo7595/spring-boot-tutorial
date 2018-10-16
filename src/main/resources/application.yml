@@ -1,2 +1,17 @@
 isooproject:
   name: Leesoo YAML
+---
+spring:
+  profiles: default
+isooproject:
+  name: Leesoo Default
+---
+spring:
+  profiles: prod
+isooproject:
+  name: Leesoo Prod
+---
+spring:
+  profiles: dev
+isooproject:
+  name: Leesoo Dev
