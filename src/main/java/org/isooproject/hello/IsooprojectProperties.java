@@ -1,13 +1,11 @@
 package org.isooproject.hello;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@ConfigurationProperties("isooproject")
+// 외부에 있는 파일이라 가정할 때(내가 어노테이션을 달지 못하는 상황)
 public class IsooprojectProperties {
 
     private String name;
