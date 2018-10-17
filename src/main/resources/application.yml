@@ -71,5 +71,4 @@ isooproject:
   number: 20
 debug: true
 logging:
-  file: my.log
-  path: ./logs/
+  file: ./logs/my.log
