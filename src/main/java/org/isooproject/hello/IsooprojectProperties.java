@@ -1,5 +1,6 @@
 package org.isooproject.hello;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,8 @@ public class IsooprojectProperties {
     @NotEmpty
     private String name;
 
+    // @Value는 오직 순수한 값의 이름으로만 써야 바인딩이 된다.
+    // @ConfigureProperties 는 Relaxed binding, Meta-data support 다 됨
     private List<MyPojo> pojoList;
 
     private String workFor;
