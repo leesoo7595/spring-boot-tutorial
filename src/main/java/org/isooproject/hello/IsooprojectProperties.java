@@ -3,12 +3,16 @@ package org.isooproject.hello;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import java.time.Duration;
 import java.util.List;
 
 // 외부에 있는 파일이라 가정할 때(내가 어노테이션을 달지 못하는 상황)
 public class IsooprojectProperties {
 
+    @NotEmpty
     private String name;
 
     private List<MyPojo> pojoList;
@@ -24,6 +28,18 @@ public class IsooprojectProperties {
     private Duration time2; // 10h
 
     private Duration time3; // 10s
+
+    @Min(0)
+    @Max(100)
+    private int number;
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
 
     public String getName() {
         return name;

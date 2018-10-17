@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +28,7 @@ public class Application {
     // 아래처럼 달면 역참조(?)로 빈을 등록하고 값을 꺼내오는 것이 가능하다.(Binding)
     @Bean
     @ConfigurationProperties("isooproject")
+    @Validated
     public IsooprojectProperties isooprojectProperties() {
         return new IsooprojectProperties();
     }
@@ -36,6 +38,7 @@ public class Application {
         System.out.println(environment.getProperty("isooproject.pojoList[0].name"));
         System.out.println(environment.getProperty("isooproject.name"));
         System.out.println(environment.getProperty("isooproject.work-for"));
+        System.out.println(environment.getProperty("isooproject.number"));
         return helloService.getMessage();
     }
 

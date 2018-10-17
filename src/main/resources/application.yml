@@ -17,6 +17,7 @@ isooproject:
   time1: 1000
   time2: PT10H
   time3: 10s
+  number: 5
 ---
 spring:
   profiles: prod
@@ -35,6 +36,7 @@ isooproject:
   time1: 2000
   time2: PT10H
   time3: 20s
+  number: 10
 ---
 spring:
   profiles: dev
@@ -49,4 +51,5 @@ isooproject:
   time1: 3000
   time2: PT10H
   time3: 30s
+  number: 20
 
