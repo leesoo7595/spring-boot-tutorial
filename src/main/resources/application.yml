@@ -4,6 +4,9 @@ isooproject:
 #아무 설정도 안했기 때문에 디폴트로 뜬다.
 spring:
   profiles: default
+  output:
+    ansi:
+      enabled: always
 isooproject:
   name: Leesoo Default
   pojoList:
@@ -18,9 +21,13 @@ isooproject:
   time2: PT10H
   time3: 10s
   number: 5
+debug: true
 ---
 spring:
   profiles: prod
+  output:
+    ansi:
+      enabled: always
 isooproject:
   name: Leesoo Prod
   pojoList:
@@ -37,9 +44,13 @@ isooproject:
   time2: PT10H
   time3: 20s
   number: 10
+debug: true
 ---
 spring:
   profiles: dev
+  output:
+    ansi:
+      enabled: always
 isooproject:
   name: Leesoo Dev
   pojoList:
@@ -52,4 +63,5 @@ isooproject:
   time2: PT10H
   time3: 30s
   number: 20
+debug: true
 
