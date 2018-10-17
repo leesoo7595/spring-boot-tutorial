@@ -14,6 +14,9 @@ isooproject:
   work-for: Microsoft
   whereToGo: Seattle
   foo_bar: baz
+  time1: 1000
+  time2: PT10H
+  time3: 10s
 ---
 spring:
   profiles: prod
@@ -29,6 +32,9 @@ isooproject:
   work-for: Microsoft
   whereToGo: Seattle
   foo_bar: baz
+  time1: 2000
+  time2: PT10H
+  time3: 20s
 ---
 spring:
   profiles: dev
@@ -40,3 +46,7 @@ isooproject:
   work-for: Microsoft
   whereToGo: Seattle
   foo_bar: baz
+  time1: 3000
+  time2: PT10H
+  time3: 30s
+

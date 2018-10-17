@@ -23,6 +23,9 @@ public class HelloService {
                 + isooprojectProperties.getPojoList().size() + " "
                 + isooprojectProperties.getWorkFor() + " "
                 + isooprojectProperties.getWhereToGo() + " "
-                + isooprojectProperties.getFooBar();
+                + isooprojectProperties.getFooBar() + " "
+                + isooprojectProperties.getTime1() + " "
+                + isooprojectProperties.getTime2() + " "
+                + isooprojectProperties.getTime3() + " ";
     }
 }
