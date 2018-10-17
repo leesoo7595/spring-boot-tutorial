@@ -72,3 +72,8 @@ isooproject:
 debug: true
 logging:
   file: ./logs/my.log
+  level:
+    root: warn
+    org:
+      springframework:
+        web: debug
