@@ -1,5 +1,6 @@
 package org.isooproject;
 
+import org.isooproject.hello.DevBean;
 import org.isooproject.hello.HelloService;
 import org.isooproject.hello.IsooprojectProperties;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class Application {
     HelloService helloService;
 
     @Autowired
-    Environment environment;
+    DevBean devBean;
 
     // 아래처럼 달면 역참조(?)로 빈을 등록하고 값을 꺼내오는 것이 가능하다.(Binding)
     @Bean
@@ -35,10 +36,6 @@ public class Application {
 
     @RequestMapping("/")
     String home() {
-        System.out.println(environment.getProperty("isooproject.pojoList[0].name"));
-        System.out.println(environment.getProperty("isooproject.name"));
-        System.out.println(environment.getProperty("isooproject.work-for"));
-        System.out.println(environment.getProperty("isooproject.number"));
         return helloService.getMessage();
     }
 
