@@ -22,6 +22,9 @@ isooproject:
   time3: 10s
   number: 5
 debug: true
+logging:
+  file: my.log
+  path: ./logs/
 ---
 spring:
   profiles: prod
@@ -45,6 +48,9 @@ isooproject:
   time3: 20s
   number: 10
 debug: true
+logging:
+  file: my.log
+  path: ./logs/
 ---
 spring:
   profiles: dev
@@ -64,4 +70,6 @@ isooproject:
   time3: 30s
   number: 20
 debug: true
-
+logging:
+  file: my.log
+  path: ./logs/
