@@ -1,11 +1,17 @@
 package org.isooproject.user;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class User {
 
+    @NotEmpty
     private String name;
 
+    @Size(min = 10)
     private int age;
 
+    @Size(min = 50)
     private int height;
 
     public String getName() {
