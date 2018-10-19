@@ -4,6 +4,9 @@ spring:
   output:
     ansi:
       enabled: always
+  http:
+    converters:
+      preferred-json-mapper: gson
 logging:
   file: my.log
   path: ./logs/
