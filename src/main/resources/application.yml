@@ -6,6 +6,8 @@ spring:
       enabled: always
   mvc:
     static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/html
 logging:
   file: my.log
   path: ./logs/
