@@ -2,7 +2,10 @@ package org.isooproject.user;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
+//xml을 원한다고 제시
+@XmlRootElement
 public class User {
 
     @NotEmpty

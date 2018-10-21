@@ -4,6 +4,9 @@ spring:
   output:
     ansi:
       enabled: always
+  mvc:
+    contentnegotiation:
+      favor-parameter: true
 #  mvc:
 #    static-path-pattern: /static/**
 #  resources:
@@ -14,7 +17,7 @@ spring:
 #          enabled: true
 #          paths:  /**
 logging:
-  file: my.log
+  file: ./logs/my.log
   path: ./logs/
 ---
 spring:
@@ -23,7 +26,7 @@ spring:
     ansi:
       enabled: always
 logging:
-  file: my.log
+  file: ./logs/my.log
   path: ./logs/
 ---
 spring:
