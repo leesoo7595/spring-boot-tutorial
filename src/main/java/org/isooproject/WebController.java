@@ -13,7 +13,7 @@ public class WebController {
      * @param model
      * @return
      */
-    @GetMapping("/hello")
+    @GetMapping("${index.path}")
     public String hello(Model model, @RequestParam String name) {
         model.addAttribute("name", "leesoo");
         return "hello";

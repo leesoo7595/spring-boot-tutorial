@@ -4,23 +4,11 @@ spring:
   output:
     ansi:
       enabled: always
-spring.mvc.contentnegotiation.favor-path-extension: true
-spring.mvc.pathmatch.use-registered-suffix-pattern: true
-#  mvc:
-#    contentnegotiation:
-#      favor-parameter: true
-#  mvc:
-#    static-path-pattern: /static/**
-#  resources:
-#    static-locations: classpath:/html
-#    chain:
-#      strategy:
-#        content:
-#          enabled: true
-#          paths:  /**
 logging:
   file: ./logs/my.log
   path: ./logs/
+index:
+  path: /hello
 ---
 spring:
   profiles: prod
