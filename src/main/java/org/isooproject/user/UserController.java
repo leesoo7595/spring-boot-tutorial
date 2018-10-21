@@ -12,20 +12,20 @@ public class UserController {
 
     @Autowired
     HttpMessageConverters converters;
-
-    /**
-     * "main" -> ViewResolver -> View.* -> ContentNegotiatingViewResolver -> View
-     *
-     * {"name":"leesoo"}
-     * @return
-     */
-    @RequestMapping("/")
-    public String index() {
-        converters.getConverters().forEach(c ->
-            System.out.println("::::::::::" + c.getClass()));
-
-        return "Hello Spring MVC";
-    }
+//
+//    /**
+//     * "main" -> ViewResolver -> View.* -> ContentNegotiatingViewResolver -> View
+//     *
+//     * {"name":"leesoo"}
+//     * @return
+//     */
+//    @RequestMapping("/")
+//    public String index() {
+//        converters.getConverters().forEach(c ->
+//            System.out.println("::::::::::" + c.getClass()));
+//
+//        return "Hello Spring MVC";
+//    }
 
     @GetMapping("/user")
     public User currentUser() {

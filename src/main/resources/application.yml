@@ -4,10 +4,15 @@ spring:
   output:
     ansi:
       enabled: always
-  mvc:
-    static-path-pattern: /static/**
-  resources:
-    static-locations: classpath:/html
+#  mvc:
+#    static-path-pattern: /static/**
+#  resources:
+#    static-locations: classpath:/html
+#    chain:
+#      strategy:
+#        content:
+#          enabled: true
+#          paths:  /**
 logging:
   file: my.log
   path: ./logs/
