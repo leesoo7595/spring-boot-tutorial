@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SingingSongController {
 
-    @CrossOrigin
     @GetMapping("/sing")
     public SingingSong singingSong() {
         SingingSong singingSong = new SingingSong();
