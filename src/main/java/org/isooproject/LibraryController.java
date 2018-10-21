@@ -12,6 +12,9 @@ public class LibraryController {
     // 3. Converter, Formatter
     @GetMapping("/bs/{id}")
     public Library visitLibrary(@PathVariable("id") Library library) {
+        if (library.getId() == 100) {
+            throw new LibraryException();
+        }
         return library;
     }
 }

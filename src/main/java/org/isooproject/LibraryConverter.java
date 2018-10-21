@@ -11,6 +11,6 @@ public class  LibraryConverter implements Converter<String, Library> {
     public Library convert(String id) {
         Library library = new Library();
         library.setId(Integer.parseInt(id));
-        return null;
+        return library;
     }
 }
