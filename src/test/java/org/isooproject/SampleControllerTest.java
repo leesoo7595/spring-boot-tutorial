@@ -7,6 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -22,7 +23,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class SampleControllerTest {
 
     // 설정 파일을 달고 있는 inner class를 만들 경우, static을 붙여줘야한다.
-    @TestConfiguration
+//    @TestConfiguration
+    // 메인 설정으로 등록되게해서 그 안에 있는 빈을 제외하고 아무것도 없음. -> componentscan이 없다.
+    // 밖에 있는 SampleController를 빈으로 찾지 못한다.
+    @Configuration
     static class TestConfig {
 
         @Bean
@@ -36,6 +40,9 @@ public class SampleControllerTest {
 
     @Autowired
     String myBean;
+
+    @Autowired
+    SampleController sampleController;
 
     @Test
     public void testFoo() throws Exception {
