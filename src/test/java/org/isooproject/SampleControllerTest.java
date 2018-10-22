@@ -7,6 +7,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -26,7 +27,9 @@ public class SampleControllerTest {
 //    @TestConfiguration
     // 메인 설정으로 등록되게해서 그 안에 있는 빈을 제외하고 아무것도 없음. -> componentscan이 없다.
     // 밖에 있는 SampleController를 빈으로 찾지 못한다.
+    // 베이스패키지 기준으로 Application.class를 찾는다 -> SampleController를 찾을 수 있게됨
     @Configuration
+    @ComponentScan(basePackageClasses = Application.class)
     static class TestConfig {
 
         @Bean
