@@ -24,16 +24,16 @@ public class SampleControllerTest {
     @Autowired
     WebTestClient webTestClient;
 
-//    @MockBean
-//    SampleService sampleService;
+    @MockBean
+    SampleService sampleService;
 
     @Test
     public void testFooWithWebTestClient() {
-//        given(sampleService.getName()).willReturn("Mock");
+        given(sampleService.getName()).willReturn("Mock");
 
         webTestClient.get().uri("/foo").exchange()
                 .expectStatus().isOk()
-                .expectBody(String.class).isEqualTo("Remote Service");
+                .expectBody(String.class).isEqualTo("Mock");
     }
 
 }
