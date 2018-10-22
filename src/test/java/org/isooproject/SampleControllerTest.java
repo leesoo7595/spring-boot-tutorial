@@ -25,13 +25,8 @@ public class SampleControllerTest {
     @Autowired
     WebTestClient webTestClient;
 
-    // Empty String이 기본값으로 설정된다.
-//    @MockBean
-//    SampleService sampleService;
-
-    // SampleService에 설정해놓은 "Remote Service"값이 기본값
     @SpyBean
-    SampleService sampleService;
+    SpySampleService spySampleService;
 
     @Test
     public void testFooWithWebTestClient() {
@@ -40,7 +35,7 @@ public class SampleControllerTest {
 
         webTestClient.get().uri("/foo").exchange()
                 .expectStatus().isOk()
-                .expectBody(String.class).isEqualTo("Mock");
+                .expectBody(String.class).isEqualTo("Spy");
     }
 
 }
