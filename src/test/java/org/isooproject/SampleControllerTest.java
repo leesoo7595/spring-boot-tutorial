@@ -1,13 +1,17 @@
 package org.isooproject;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.context.WebApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -26,6 +30,12 @@ public class SampleControllerTest {
     @Autowired
     MockMvc mockMvc;
 
+    @Autowired
+    WebApplicationContext wac;
+
+    @Autowired
+    TestRestTemplate testRestTemplate;
+
     @Test
     public void testFoo() throws Exception {
         System.out.println("==============PORT=============");
@@ -37,4 +47,11 @@ public class SampleControllerTest {
                 .andExpect(content().string("Hello"))
                 .andDo(print());
     }
+
+    @Test
+    public void testFooWithRestTemplate() {
+        String body = this.testRestTemplate.getForObject("/foo", String.class);
+        assertThat(body).isEqualTo("Hello");
+    }
+
 }
