@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -24,12 +25,18 @@ public class SampleControllerTest {
     @Autowired
     WebTestClient webTestClient;
 
-    @MockBean
+    // Empty String이 기본값으로 설정된다.
+//    @MockBean
+//    SampleService sampleService;
+
+    // SampleService에 설정해놓은 "Remote Service"값이 기본값
+    @SpyBean
     SampleService sampleService;
 
     @Test
     public void testFooWithWebTestClient() {
-        given(sampleService.getName()).willReturn("Mock");
+        // 이 테스트 내부의 SampleService를 "Mock"으로 바꾸기
+//        given(sampleService.getName()).willReturn("Mock");
 
         webTestClient.get().uri("/foo").exchange()
                 .expectStatus().isOk()
