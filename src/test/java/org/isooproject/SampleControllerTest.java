@@ -4,13 +4,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import org.springframework.web.context.WebApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.BDDMockito.given;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -23,20 +24,16 @@ public class SampleControllerTest {
     @Autowired
     WebTestClient webTestClient;
 
-    @Autowired
-    TestRestTemplate testRestTemplate;
-
-    @Test
-    public void testFooWithRestTemplate() {
-        String body = this.testRestTemplate.getForObject("/foo", String.class);
-        assertThat(body).isEqualTo("Hello");
-    }
+//    @MockBean
+//    SampleService sampleService;
 
     @Test
     public void testFooWithWebTestClient() {
+//        given(sampleService.getName()).willReturn("Mock");
+
         webTestClient.get().uri("/foo").exchange()
                 .expectStatus().isOk()
-                .expectBody(String.class).isEqualTo("Hello");
+                .expectBody(String.class).isEqualTo("Remote Service");
     }
 
 }
