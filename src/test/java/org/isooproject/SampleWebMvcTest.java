@@ -32,15 +32,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureRestDocs
 public class SampleWebMvcTest {
 
-    @Rule
-    public OutputCapture capture = new OutputCapture();
-
-    @Test
-    public void testName() {
-        System.out.println("Hello World");
-        assertThat(capture.toString().contains("World"));
-    }
-
     @Autowired
     MockMvc mockMvc;
 
