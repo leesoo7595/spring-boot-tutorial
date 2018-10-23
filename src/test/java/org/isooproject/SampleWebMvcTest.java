@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation;
+import org.springframework.restdocs.mockmvc.RestDocumentationResultHandler;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import org.springframework.test.web.servlet.MockMvc;
@@ -40,7 +44,17 @@ public class SampleWebMvcTest {
 
         mockMvc.perform(get("/foo"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("isooproject"))
-                .andDo(document("foo"));
+                .andExpect(content().string("isooproject"));
+    }
+
+    // 자동으로 rest docs 생성시켜줌 (target/generated-snippets 아래)
+    @TestConfiguration
+    static class ResultHandlerConfiguration {
+
+        @Bean
+        public RestDocumentationResultHandler restDocumentation() {
+            return MockMvcRestDocumentation.document("{method-name}");
+        }
+
     }
 }
