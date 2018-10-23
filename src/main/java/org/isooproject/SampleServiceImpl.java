@@ -17,7 +17,7 @@ public class SampleServiceImpl implements SampleService {
     }
 
     public String getName() {
-        return restTemplate.getForObject("/foo", String.class);
+        return "isooproject";
     }
 
     public int getNumber() {
