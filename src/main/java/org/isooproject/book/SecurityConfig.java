@@ -13,7 +13,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/hello.html")).permitAll()
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin().permitAll()
