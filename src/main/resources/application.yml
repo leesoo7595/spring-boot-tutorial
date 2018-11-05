@@ -9,6 +9,8 @@ logging:
   path: ./logs/
 index:
   path: /hello
+server:
+  port: 8081
 ---
 spring:
   profiles: prod
