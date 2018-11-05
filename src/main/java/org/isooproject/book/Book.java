@@ -1,4 +1,4 @@
-package org.isooproject;
+package org.isooproject.book;
 
 public class Book {
 
