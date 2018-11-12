@@ -9,8 +9,10 @@ public class Person {
     @Id @GeneratedValue
     private long id;
 
+    @Column(unique = true, nullable = false)
     private String email;
 
+    @Column(nullable = false)
     private String name;
 
     @Temporal(TemporalType.TIMESTAMP)

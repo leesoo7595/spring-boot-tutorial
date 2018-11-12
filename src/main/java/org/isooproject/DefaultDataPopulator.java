@@ -24,6 +24,8 @@ public class DefaultDataPopulator implements ApplicationRunner {
         person.setJoined(new Date());
         personRepository.save(person);
 
+        personRepository.findByEmail("leesoo@email.com");
+
         Meeting meeting = new Meeting();
         meeting.setTitle("new meeting");
         meeting.setLocation("Seoul");
