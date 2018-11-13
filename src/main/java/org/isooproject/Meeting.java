@@ -3,6 +3,8 @@ package org.isooproject;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Objects;
+
 @Document(collection = "meetings")
 public class Meeting {
 
@@ -44,5 +46,20 @@ public class Meeting {
                 ", title='" + title + '\'' +
                 ", location='" + location + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Meeting meeting = (Meeting) o;
+        return Objects.equals(id, meeting.id) &&
+                Objects.equals(title, meeting.title) &&
+                Objects.equals(location, meeting.location);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, location);
     }
 }
