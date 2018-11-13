@@ -24,15 +24,15 @@ public class MeetingRepositoryTests {
         Meeting meeting = new Meeting();
         meeting.setTitle("new Meeting");
         meeting.setLocation("redmond");
-        meetingRepository.save(meeting);
+        meetingRepository.save(meeting).block();
 
         Meeting mongoMeeting = new Meeting();
         meeting.setTitle("mongo study");
         meeting.setLocation("seattle");
-        meetingRepository.save(mongoMeeting);
+        meetingRepository.save(mongoMeeting).block();
 
         // When
-        List<Meeting> result = meetingRepository.findByLocation("seattle");
+        List<Meeting> result = meetingRepository.findByLocation("seattle").collectList().block();
 
         // Then
         assertThat(result.size()).isEqualTo(1);
