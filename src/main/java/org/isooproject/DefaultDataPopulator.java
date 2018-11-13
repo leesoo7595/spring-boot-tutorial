@@ -14,13 +14,8 @@ public class DefaultDataPopulator implements ApplicationRunner {
     @Autowired
     MeetingRepository meetingRepository;
 
-    @Autowired
-    RedisTemplate redisTemplate;
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        redisTemplate.opsForSet()
-
         Meeting meeting = new Meeting();
         meeting.setTitle("New Meeting");
         meeting.setStartAt(new Date());
