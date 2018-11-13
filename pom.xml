@@ -49,6 +49,49 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <executions>
+                    <execution>
+                        <id>jooq-codegen</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jooq</groupId>
+                        <artifactId>jooq-meta-extensions</artifactId>
+                        <version>3.10.5</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <generator>
+                        <database>
+                            <name>org.jooq.meta.extensions.jpa.JPADatabase</name>
+                            <properties>
+                                <property>
+                                    <key>packages</key>
+                                    <value>
+                                        org.isooproject
+                                    </value>
+                                </property>
+                            </properties>
+                            <includes>.*</includes>
+                        </database>
+                        <generate>
+                            <generatedAnnotation>false</generatedAnnotation>
+                        </generate>
+                        <target>
+                            <packageName>org.isooproject.jooq</packageName>
+                            <directory>src/main/java</directory>
+                        </target>
+                    </generator>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
