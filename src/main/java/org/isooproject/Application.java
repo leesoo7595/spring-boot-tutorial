@@ -14,10 +14,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 public class Application {
 
     @Autowired
-    MongoDbFactory mongoDbFactory;
-
-    @Autowired
-    MongoTemplate mongoTemplate;
+    MeetingRepository meetingRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -26,10 +23,10 @@ public class Application {
     @Bean
     public ApplicationRunner applicationRunner() {
         return args -> {
-            Meeting meeting = new Meeting();
-            meeting.setLocation("Redmond");
-            meeting.setTitle("MongoDB Study");
-            mongoTemplate.insert(meeting, "meetings");
+            meetingRepository.findByLocation("Redmond").forEach(m -> {
+                System.out.println("====================");
+                System.out.println(m);
+            });
         };
     }
 
