@@ -1,25 +1,24 @@
 package org.isooproject;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.neo4j.ogm.annotation.GeneratedValue;
+import org.neo4j.ogm.annotation.Id;
+import org.neo4j.ogm.annotation.NodeEntity;
 
-import java.util.Objects;
-
-@Document(collection = "meetings")
+@NodeEntity
 public class Meeting {
 
-    @Id
-    private String id;
+    @Id @GeneratedValue
+    private Long id;
 
     private String title;
 
-    private String location;
+    private String name;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -31,35 +30,11 @@ public class Meeting {
         this.title = title;
     }
 
-    public String getLocation() {
-        return location;
+    public String getName() {
+        return name;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    @Override
-    public String toString() {
-        return "Meeting{" +
-                "id='" + id + '\'' +
-                ", title='" + title + '\'' +
-                ", location='" + location + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Meeting meeting = (Meeting) o;
-        return Objects.equals(id, meeting.id) &&
-                Objects.equals(title, meeting.title) &&
-                Objects.equals(location, meeting.location);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, location);
+    public void setName(String name) {
+        this.name = name;
     }
 }

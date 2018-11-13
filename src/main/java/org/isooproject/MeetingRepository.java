@@ -1,14 +1,8 @@
 package org.isooproject;
 
-import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
-import reactor.core.publisher.Flux;
+import org.springframework.data.neo4j.repository.Neo4jRepository;
 
-import java.util.List;
+public interface MeetingRepository extends Neo4jRepository<Meeting, Long> {
 
-
-public interface MeetingRepository extends ReactiveMongoRepository<Meeting, String> {
-
-    Flux<Meeting> findByLocation(String location);
 
 }
