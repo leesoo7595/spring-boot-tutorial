@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.util.StopWatch;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
@@ -23,14 +24,22 @@ public class Application {
     @Bean
     public ApplicationRunner applicationRunner() {
         return args -> {
+            StopWatch stopWatch = new StopWatch();
+            stopWatch.start();
+
             RestTemplate restTemplate = restTemplateBuilder.build();
             GithubRepository[] result = restTemplate.getForObject("https://api.github.com/users/leesoo7595/repos", GithubRepository[].class);
             Arrays.stream(result).forEach(r -> {
                 System.out.println("repo : " + r.getUrl());
             });
 
-            String commits = restTemplate.getForObject("https://api.github.com/repos/leesoo7595/Airbnb-Project/commits", String.class);
-            System.out.println(commits);
+            GithubCommit[] commits = restTemplate.getForObject("https://api.github.com/repos/leesoo7595/Airbnb-Project/commits", GithubCommit[].class);
+            Arrays.stream(commits).forEach(c -> {
+                System.out.println("url : " + c.getUrl() + " / sha : " + c.getSha());
+            });
+
+            stopWatch.stop();
+            System.out.println(stopWatch.prettyPrint());
         };
     }
 
