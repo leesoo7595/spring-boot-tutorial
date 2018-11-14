@@ -8,6 +8,8 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.util.StopWatch;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
 
@@ -15,7 +17,7 @@ import java.util.Arrays;
 public class Application {
 
     @Autowired
-    RestTemplateBuilder restTemplateBuilder;
+    WebClient.Builder webClientBuild;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -27,16 +29,27 @@ public class Application {
             StopWatch stopWatch = new StopWatch();
             stopWatch.start();
 
-            RestTemplate restTemplate = restTemplateBuilder.build();
-            GithubRepository[] result = restTemplate.getForObject("https://api.github.com/users/leesoo7595/repos", GithubRepository[].class);
-            Arrays.stream(result).forEach(r -> {
-                System.out.println("repo : " + r.getUrl());
-            });
+            WebClient webClient = webClientBuild.baseUrl("https://api.github.com").build();
 
-            GithubCommit[] commits = restTemplate.getForObject("https://api.github.com/repos/leesoo7595/Airbnb-Project/commits", GithubCommit[].class);
-            Arrays.stream(commits).forEach(c -> {
-                System.out.println("url : " + c.getUrl() + " / sha : " + c.getSha());
-            });
+            Mono<GithubRepository[]> reposMono = webClient.get().uri("/users/leesoo7595/repos")
+                    .retrieve()
+                    .bodyToMono(GithubRepository[].class);
+
+            Mono<GithubCommit[]> commitsMono = webClient.get().uri("/repos/leesoo7595/Airbnb-Project/commits")
+                    .retrieve()
+                    .bodyToMono(GithubCommit[].class);
+
+            reposMono.doOnSuccess(ra -> {
+                Arrays.stream(ra).forEach(r -> {
+                    System.out.println("repo : " + r.getUrl());
+                });
+            }).subscribe();
+
+            commitsMono.doOnSuccess(ca -> {
+               Arrays.stream(ca).forEach(c -> {
+                   System.out.println("commits : " + c.getSha());
+               });
+            }).subscribe();
 
             stopWatch.stop();
             System.out.println(stopWatch.prettyPrint());
