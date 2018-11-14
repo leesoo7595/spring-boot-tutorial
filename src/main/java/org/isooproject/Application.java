@@ -40,13 +40,9 @@ public class Application {
                     .retrieve()
                     .bodyToFlux(GithubCommit.class);
 
-            repos.doOnNext(r -> {
-                System.out.println("repo : " + r.getUrl());
-            }).subscribe();
+            repos.subscribe(r -> System.out.println("repo :" + r.getUrl()));
 
-            commits.doOnNext(c -> {
-               System.out.println("commits : " + c.getSha());
-            }).subscribe();
+            commits.subscribe(c -> System.out.println("commit: " + c.getSha()));
 
             stopWatch.stop();
             System.out.println(stopWatch.prettyPrint());
