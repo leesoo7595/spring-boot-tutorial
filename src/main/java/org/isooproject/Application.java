@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.util.StopWatch;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
@@ -31,24 +32,20 @@ public class Application {
 
             WebClient webClient = webClientBuild.baseUrl("https://api.github.com").build();
 
-            Mono<GithubRepository[]> reposMono = webClient.get().uri("/users/leesoo7595/repos")
+            Flux<GithubRepository> repos = webClient.get().uri("/users/leesoo7595/repos")
                     .retrieve()
-                    .bodyToMono(GithubRepository[].class);
+                    .bodyToFlux(GithubRepository.class);
 
-            Mono<GithubCommit[]> commitsMono = webClient.get().uri("/repos/leesoo7595/Airbnb-Project/commits")
+            Flux<GithubCommit> commits = webClient.get().uri("/repos/leesoo7595/Airbnb-Project/commits")
                     .retrieve()
-                    .bodyToMono(GithubCommit[].class);
+                    .bodyToFlux(GithubCommit.class);
 
-            reposMono.doOnSuccess(ra -> {
-                Arrays.stream(ra).forEach(r -> {
-                    System.out.println("repo : " + r.getUrl());
-                });
+            repos.doOnNext(r -> {
+                System.out.println("repo : " + r.getUrl());
             }).subscribe();
 
-            commitsMono.doOnSuccess(ca -> {
-               Arrays.stream(ca).forEach(c -> {
-                   System.out.println("commits : " + c.getSha());
-               });
+            commits.doOnNext(c -> {
+               System.out.println("commits : " + c.getSha());
             }).subscribe();
 
             stopWatch.stop();
